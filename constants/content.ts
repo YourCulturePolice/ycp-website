@@ -1,5 +1,31 @@
 import { Monitor, Clock, FolderIcon } from 'lucide-react'
-import type { KeyProblem, SolutionStep, Testimonial, FAQItem } from '@/types'
+import type { ReactNode } from 'react'
+
+interface KeyProblem {
+  title: string;
+  description: string;
+  icon: ReactNode;
+}
+
+interface SolutionStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+interface Testimonial {
+  name: string;
+  position: string;
+  company: string;
+  image: string;
+  quote: string;
+  rating: number;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 export const KEY_PROBLEMS: KeyProblem[] = [
   {
@@ -82,4 +108,3 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: "Absolutely not. You retain 100% ownership of your content. We simply help you distribute and monetize it more effectively."
   }
 ]
-
