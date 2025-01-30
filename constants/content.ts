@@ -1,47 +1,21 @@
 import { Monitor, Clock, FolderIcon } from 'lucide-react'
-import type { JSX } from 'react'
-
-interface KeyProblem {
-  title: string;
-  description: string;
-  icon: JSX.Element;
-}
-
-interface SolutionStep {
-  step: string;
-  title: string;
-  description: string;
-}
-
-interface Testimonial {
-  name: string;
-  position: string;
-  company: string;
-  image: string;
-  quote: string;
-  rating: number;
-}
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import type { KeyProblem, SolutionStep, Testimonial, FAQItem } from '@/types'
 
 export const KEY_PROBLEMS: KeyProblem[] = [
   {
     title: "Forgotten Content",
     description: "You've made tons of great content over the years that's just sitting there. While you're busy making new videos, your old hits could be making money somewhere else.",
-    icon: <FolderIcon className="h-6 w-6 text-orange-400" />
+    icon: FolderIcon
   },
   {
     title: "Same Old Platforms",
     description: "Your content is stuck on the usual platforms, competing with millions of others. There's a whole world of platforms out there who'd pay for your content, but you don't know where to start.",
-    icon: <Monitor className="h-6 w-6 text-orange-400" />
+    icon: Monitor
   },
   {
     title: "No Time to Explore",
     description: "Managing content across different platforms feels like a second job. Every hour spent figuring out new platforms is an hour away from creating what you love.",
-    icon: <Clock className="h-6 w-6 text-orange-400" />
+    icon: Clock
   }
 ]
 
