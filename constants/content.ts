@@ -1,10 +1,10 @@
 import { Monitor, Clock, FolderIcon } from 'lucide-react'
-import type { ReactNode } from 'react'
+import type { JSX } from 'react'
 
 interface KeyProblem {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon: JSX.Element;
 }
 
 interface SolutionStep {
