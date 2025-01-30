@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #ff7a00;
+  --brand-yellow: #ffd600;
+}
+
+@layer base {
+  body {
+    @apply text-white antialiased;
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11632.jpg-D49ZHMGSF8gx5sVyzoHbrscXw7CCXR.jpeg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .ticker-container {
+    @apply w-full overflow-hidden;
+  }
+
+  .ticker-wrapper {
+    @apply flex;
+    animation: ticker 30s linear infinite reverse;
+  }
+
+  .ticker-container-horizontal {
+    @apply w-full overflow-hidden;
+  }
+
+  .ticker-wrapper-horizontal {
+    @apply inline-flex whitespace-nowrap;
+    animation: tickerHorizontal 60s linear infinite reverse;
+  }
+
+  .ticker-wrapper-horizontal:hover {
+    animation-play-state: paused;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes tickerHorizontal {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
