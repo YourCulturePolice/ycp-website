@@ -1,38 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { useState } from "react"
-import { subscribeToNewsletter } from "@/app/actions/newsletter"
-import type { NewsletterResponse } from "@/types/newsletter"
+import Image from 'next/image'
 
 export function Footer() {
-  const [email, setEmail] = useState("")
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
-  const [message, setMessage] = useState("")
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus("loading")
-
-    const formData = new FormData()
-    formData.append("email", email)
-
-    try {
-      const result = await subscribeToNewsletter(formData)
-      if (result.success) {
-        setStatus("success")
-        setMessage("Successfully subscribed to newsletter!")
-        setEmail("")
-      } else {
-        throw new Error(result.error)
-      }
-    } catch (error) {
-      setStatus("error")
-      setMessage(error instanceof Error ? error.message : "Failed to subscribe. Please try again.")
-    }
-  }
-
   return (
     <footer className="bg-black text-white border-t border-zinc-800">
       <div className="container mx-auto px-4 py-16">
@@ -153,4 +124,3 @@ export function Footer() {
     </footer>
   )
 }
-
