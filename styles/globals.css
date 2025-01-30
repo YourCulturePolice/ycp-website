@@ -7,6 +7,12 @@
   --brand-yellow: #ffd600;
 }
 
+* {
+  -webkit-user-modify: read-only;
+  -moz-user-modify: read-only;
+  user-modify: read-only;
+}
+
 @layer base {
   body {
     @apply text-white antialiased;
@@ -76,4 +82,3 @@
     transform: translateX(0);
   }
 }
-
